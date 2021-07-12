@@ -1,0 +1,20 @@
+"""
+Cho N điểm trên mặt phẳng tọa độ. Hãy tìm bán kính nhỏ nhất của hình tròn chứa N điểm trên (một số điểm có thể nằm trên biên). Làm tròn tới chữ số phần thập phân thứ 3
+
+Ví dụ
+
+Với n = 3 , x = [0, 4, 1] , y = [0, 0, 1] kết quả đầu ra sẽ là theSmallestRadius(n, x, y) = 2.000 .
+Vì hình tròn có bán kính nhỏ nhất và chứa 3 điểm tra sẽ có tâm tại ( 2 ; 0 ) bán kính là 2
+"""
+from math import sqrt
+def theSmallestRadius(n,x,y):
+    lis = []
+    k = len(x)
+    for i in range(k):
+        for j in range(i+1,k):
+            lis.append(math.sqrt((x[j]-x[i])**2+(y[j]-y[i])**2))
+    ans = round(max(lis)/2,3)
+    if ans.is_integer() :
+        return str(ans) + "00"
+    else:
+        return str(ans)
