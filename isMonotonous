@@ -1,0 +1,21 @@
+"""
+Cho một mảng các số nguyên, bạn hãy viết hàm kiểm tra xem các phần tử của mảng có tạo thành một dãy số tăng dần hoặc giảm dần hay không, nếu có return true, ngược lại return false.
+
+Ví du
+
+Với sequence = [1, 4, 5, 7, 9], thì kết quả là isMonotonous(sequence) = true
+Với sequence = [0], thì kết quả là isMonotonous(sequence) = true;
+Với sequence = [3, 3], thì kết quả là isMonotonous(sequence) = false.
+Giải thích: 2 phần tử bằng nhau không tạo thành dãy tăng hay dãy giảm.
+"""
+def isMonotonous(sequence):
+    if len(sequence) == 1:
+        return True
+    else:
+        for i in range(len(sequence)-1):
+            if sequence[i+1] > sequence[i] :
+                return True
+            elif sequence[i+1] < sequence[i] :
+                return True
+            elif sequence[i+1] == sequence[i]:
+                return False
