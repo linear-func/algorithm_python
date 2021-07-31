@@ -1,0 +1,13 @@
+"""
+Cho chuỗi str. Hãy tìm kí tự có giá trị thập phân (trong bảng mã ASCII) lớn nhất trong chuỗi str và trả về giá trị thập phân đó.
+
+Ví dụ: 
+
+Với s1 = "abc", đầu ra là checkMax(s1)= 99.
+Vì 'c' là kí tự có giá trị trong bảng mã ASCII lớn nhất nằm trong chuỗi s1 và giá trị đó bằng 99.
+"""
+def checkMax(str):
+    lis = [ ]
+    for i in range(len(str)):
+        lis.append(ord(str[i]))
+    return max(lis)
