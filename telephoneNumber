@@ -1,0 +1,28 @@
+"""
+Số điện thoại là một chuỗi chính xác 11 chữ số, trong đó chữ số đầu tiên là 8.
+
+Ví dụ, dãy 80011223388 là số điện thoại, nhưng dãy 70011223388 và 80000011223388 thì không.
+
+Bạn được cung cấp một chuỗi s, bao gồm các chữ số.
+
+Trong một thao tác, bạn có thể xóa bất kỳ ký tự nào khỏi chuỗi. Ví dụ, có thể lấy chuỗi 112,111 hoặc 121 từ chuỗi 1121.
+
+Bạn cần xác định xem có một chuỗi hoạt động như vậy (có thể trống) thì sau đó chuỗi s có trở thành số điện thoại hay không.
+
+Ví dụ:
+
+Với s="7818005553535", kết quả đầu ra là telephoneNumber(s) = "YES"
+
+Bạn có thể xóa chữ số đầu tiên và chữ số cuối cùng để lấy số điện thoại hợp lệ 81800555353
+"""
+def telephoneNumber(s):
+    lis = []
+    for i in range(len(s)):
+        if s[i] != "8":
+            lis.append(s[i])
+        else:
+            break
+    if len(s) - len(lis) >= 11:
+        return "YES"
+    else:
+        return "NO"
