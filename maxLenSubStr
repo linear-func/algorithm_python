@@ -1,0 +1,15 @@
+"""
+Cho xâu kí tự str chỉ chứa các kí tự chữ cái in thường. Hãy tìm độ dài lớn nhất của xâu con của str mà kí tự đầu tiên và kí tự cuối cùng của xâu con đó là giống nhau
+
+Ví dụ:
+
+Với str = "geeks", kết quả của hàm maxLenSubStr(str) = 2.
+"ee" là xâu con của str mà kí tự đầu tiên và kí tự cuối cùng là giống nhau.
+Với str = "abcda", kết quả của hàm maxLenSubStr(str) = 5.
+"abcda" là xâu con của str mà kí tự đầu tiên và kí tự cuối cùng là giống nhau.
+"""
+def maxLenSubStr(str):
+ for x in range(len(str),0,-1):
+  for y in range(len(str)-x+1):
+   a=str[y:y+x]
+   if a[0]==a[-1]:return x
